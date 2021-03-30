@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "274243456421",
+    "project_id": "onlineclass123",
+    "firebase_url": "https://onlineclass123-default-rtdb.firebaseio.com",
+    "storage_bucket": "onlineclass123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274243456421:android:6709d50b2de6c7fccc6c4c",
+        "android_client_info": {
+          "package_name": "com.ksquarej.online_class_proj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274243456421-7rqesfr2vkplpb64i87gd3qces306ibk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhuWUQ_X7UILhf-v87Jtb-9nz4kXhLkEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274243456421-7rqesfr2vkplpb64i87gd3qces306ibk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
