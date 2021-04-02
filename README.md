@@ -6,4 +6,4 @@ Features of the app:
 1. Make your own organisation as admin.
 2. Admin adds teachers and students to their organisation.
 3. Teacher add courses and students to their courses.
-4. Teacher starts live online class then all added studetns join that class in their course pannel.
+4. Teacher starts live online class then all added students join that class in their course pannel.
