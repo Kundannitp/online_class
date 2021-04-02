@@ -29,12 +29,13 @@ public class commonAdapter  extends RecyclerView.Adapter<commonAdapter.MyViewHol
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView personemail;
+        TextView personemail,person_id;
         CircleImageView personimg;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             personemail = itemView.findViewById(R.id.cardView_commodityName);
+            person_id=itemView.findViewById(R.id.cardView_people_id);
         }
     }
 
@@ -50,6 +51,7 @@ public class commonAdapter  extends RecyclerView.Adapter<commonAdapter.MyViewHol
         viewHolder.itemView.setTag((list1.get(i)));
         add_class obj=list1.get(i);
         viewHolder.personemail.setText(obj.getEmail());
+        viewHolder.person_id.setText(obj.getId());
     }
     @Override
     public int getItemCount() {

@@ -60,9 +60,9 @@ public class Classes_teachers extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<add_course> student_lst=new ArrayList<>();
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
-                    student_lst.add(new add_course(ds.child("course_name").getValue().toString(),ds.child("course_id").getValue().toString()));
+                    student_lst.add(new add_course(ds.child("course_name").getValue().toString(),ds.child("course_id").getValue().toString(),ds.getKey()));
                 }
-                adapter_class adapter_class1=new adapter_class(getContext(),student_lst);
+                adapter_class adapter_class1=new adapter_class(getContext(),student_lst,org_id,teacher_id);
                 mRecyclerView.setAdapter(adapter_class1);
                 ProgressBar progressBar = v.findViewById(R.id.progress_circle);
                 progressBar.setVisibility(View.GONE);

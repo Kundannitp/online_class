@@ -49,13 +49,30 @@
             android:layout_alignParentTop="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="7dp"
             android:layout_marginLeft="25dp"
             android:layout_toRightOf="@+id/cardView_commodityImageView"
             android:text="Commodity name "
             android:textColor="#000000"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/cardView_people_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView_commodityName"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/cardView_commodityImageView"
+            android:textColor="#8A8989"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingRight="25dp"
+            android:text="Commodity type"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="12sp"
             />
 
         <View

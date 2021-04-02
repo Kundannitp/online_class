@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:paddingTop="16dp"
-        android:paddingBottom="0dp"
+        android:paddingBottom="10dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:layout_height="wrap_content"
@@ -83,6 +83,73 @@
             android:layout_marginTop="10dp"
             android:layout_below="@+id/cardView_commodityImageView"
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView_view"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/add_student_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/course_btn_design"
+                    android:textColor="#FFFFFF"
+                    android:text="Add Student"
+                    android:layout_marginRight="5dp"
+                    android:textSize="17dp"
+                    />
+                <Button
+                    android:id="@+id/view_student_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/course_btn_design"
+                    android:textColor="#FFFFFF"
+                    android:text="View Students"
+                    android:textSize="17dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/start_class_btn"
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/course_btn_design"
+                    android:textColor="#FFFFFF"
+                    android:text="Start Class"
+                    android:layout_marginRight="5dp"
+                    android:textSize="17dp"
+                    />
+                <Button
+                    android:id="@+id/end_class_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/course_btn_design"
+                    android:textColor="#FFFFFF"
+                    android:text="End class"
+                    android:textSize="17dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -61,7 +61,7 @@ public class Students extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<add_class> student_lst=new ArrayList<>();
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
-                    student_lst.add(new add_class(ds.child("email").getValue().toString()));
+                    student_lst.add(new add_class(ds.child("id").getValue().toString(),ds.child("email").getValue().toString()));
                 }
                 commonAdapter commonAdapter=new commonAdapter(getContext(),student_lst);
                 mRecyclerView.setAdapter(commonAdapter);
@@ -89,14 +89,15 @@ public class Students extends Fragment {
             closeButton.setOnClickListener(v -> customView.dismiss());
             Button btn = customView.findViewById(R.id.add_teacher_btn);
             EditText email_teacher=customView.findViewById(R.id.email_teacher);
+            EditText id_teacher=customView.findViewById(R.id.id_teacher);
             TextView title_value=customView.findViewById(R.id.title_val);
             title_value.setText("Add Students");
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(!email_teacher.getText().toString().equals("")) {
+                    if(!email_teacher.getText().toString().equals("")&&!id_teacher.getText().toString().equals("")) {
                         DatabaseReference m_ref = FirebaseDatabase.getInstance().getReference();
-                        m_ref.child("organisation").child(org_id).child("students").push().setValue(new add_class(email_teacher.getText().toString()));
+                        m_ref.child("organisation").child(org_id).child("students").push().setValue(new add_class(id_teacher.getText().toString(),email_teacher.getText().toString()));
                         customView.dismiss();
                     }
                 }

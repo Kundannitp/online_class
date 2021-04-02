@@ -42,12 +42,25 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/id_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Id..."
+        android:textSize="15sp"
+        android:layout_marginTop="2.5dp"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text"
+        />
+
+    <EditText
         android:id="@+id/email_teacher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email..."
         android:textSize="15sp"
-        android:layout_marginTop="2.5dp"
+        android:layout_marginTop="15dp"
         android:padding="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
