@@ -2,8 +2,11 @@ package com.ksquarej.online_class_proj.Teachers.Fragmets;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +17,29 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.ksquarej.online_class_proj.MainActivity;
 import com.ksquarej.online_class_proj.R;
+import com.ksquarej.online_class_proj.Teachers.TeacherHome;
 
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
@@ -234,8 +249,7 @@ public class adapter_class  extends RecyclerView.Adapter<adapter_class.MyViewHol
         viewHolder.end_class.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference().child("organisation").child(org_id).child("teachers")
-                        .child(teacher_id).child("courses").child(obj.getCourse_key()).child("flag").setValue("false");
+                showLogoutDialog(obj);
             }
         });
     }
@@ -248,6 +262,31 @@ public class adapter_class  extends RecyclerView.Adapter<adapter_class.MyViewHol
     @Override
     public int getItemCount() {
         return list1.size();
+    }
+
+
+    private void showLogoutDialog(add_course obj)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Want to end the class?");
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseDatabase.getInstance().getReference().child("organisation").child(org_id).child("teachers")
+                        .child(teacher_id).child("courses").child(obj.getCourse_key()).child("flag").setValue("false");
+                dialog.cancel();
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 
 }
